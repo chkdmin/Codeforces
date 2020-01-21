@@ -1,0 +1,12 @@
+{
+    "dev": {
+        "app_function": "app.app",
+        "profile_name": "zappa-personal",
+        "project_name": "timer",
+        "runtime": "python3.6",
+        "s3_bucket": "zappa-slave-timer",
+        "domain": "slave.changm.in",
+        "certificate_arn": "arn:aws:acm:us-east-1:657289754684:certificate/350bd908-0136-4b7e-8341-59092ad787b3",
+        "keep_warm_expression": "rate(1 hour)"
+    }
+}

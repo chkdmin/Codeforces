@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    background: black;
+}
+
+h1, h2 {
+    text-align: center;
+    color: white;
+}
+
+.center {
+    height: 100%;
+    position: relative;
+}
+
+.center div {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.center img {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    display: block;
+}
+
+.center h1 {
+    padding-top: 15px;
+}

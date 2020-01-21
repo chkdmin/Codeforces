@@ -1,0 +1,66 @@
+body, html {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+html {
+    font-size: 10px;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 3rem 1rem 3rem 1rem;
+    color: white;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 1rem 0;
+    color: white;
+}
+
+h3 {
+    font-size: 4rem;
+    margin: 1rem 0;
+    color: white;
+}
+
+span {
+    color: #D3D3D3;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.bg {
+    min-height: 100%;
+
+    /* Center and scale the image nicely */
+    background: #000 no-repeat center;
+    /*background: url("http://i.imgur.com/ZRuAcjm.jpg") center center no-repeat;*/
+    background-size: cover;
+}
+
+.bg-cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index:1;
+}
+
+.section {
+    text-align: center;
+    padding: 30px;
+}
+
+.header {
+    margin: -20px 0;
+    padding: 0 15px;
+    background: black;
+    display: inline-block;
+}
+
+.container {
+    border: 2px solid white;
+    margin-bottom: 45px;
+}

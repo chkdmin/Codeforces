@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Codeforces Contest Time Table"/>
+    <meta property="og:url" content="https://codeforces.changm.in"/>
+{#    <meta property="og:image" content="{{ image_link }}"/>#}
+{#    <meta property="og:description"#}
+{#          content="{{ left_percentages|float|round(2, 'floor') }}% (D-{{ left_days }})"/>#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <title>Codeforces Contest Time Table</title>
+  </head>
+  {% macro render_to_percentage_information(percentage_data) %}
+    <span id="percentages">{{ percentage_data['percentage'] }}</span>
+    <span>%</span>
+    <span> on </span>
+    <span id="percentages-date">{{ percentage_data['percentages_date'] }}</span>
+    <span>( D - {{ percentage_data['left_day_of_percentages'] }} )</span>
+  {% endmacro %}
+  <body>
+    <div class="section bg">
+      <h1 id="title">Codeforces Contest Time Table</h1>
+      {% for contest in contests %}
+        {% if loop.first %}
+          <div class="container">
+            <h2 class="header">Next Contest</h2>
+            <p>
+              <span>{{ contest.name }}</span>
+              <br />
+              <span>Started:
+                <span class="contest-date">{{ contest.date }}</span>
+              </span>
+              <br />
+              <span>Before:
+                <span class="before-date">
+                </span>
+              </span>
+            </p>
+          </div>
+          <div class="container">
+            <h2 class="header">Upcoming</h2>
+        {% else %}
+            <p>
+              <span>{{ contest.name }}</span>
+              <br />
+              <span>Started:
+                <span class="contest-date">{{ contest.date }}</span>
+              </span>
+              <br />
+              <span>Before:
+                <span class="before-date">
+                </span>
+              </span>
+            </p>
+        {% endif %}
+        {% if loop.last %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='moment.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='moment-duration-format.js') }}"></script>
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
+</html>
