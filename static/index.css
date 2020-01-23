@@ -64,3 +64,7 @@ span {
     border: 2px solid white;
     margin-bottom: 45px;
 }
+
+.status {
+    color: red;
+}

@@ -47,8 +47,8 @@ def init_imgur_client():
 def create_app():
     app_ = Flask(__name__, template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)
     init_config(app_)
-    init_flask_s3(app_)
-    init_imgur_client()
+    # init_flask_s3(app_)
+    # init_imgur_client()
     return app_
 
 
