@@ -68,3 +68,7 @@ span {
 .status {
     color: red;
 }
+
+.contest-date {
+    display: none;
+}

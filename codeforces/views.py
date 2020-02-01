@@ -5,7 +5,7 @@ import arrow
 import requests
 from flask import render_template
 
-from codeforces.utils import generate_text_image
+from codeforces.utils import generate_text_image, get_weekday
 from . import app, imgur_client
 
 result = None
@@ -22,7 +22,9 @@ def index():
     for contest in result:
         if contest['phase'] == 'FINISHED':
             continue
-        contest['date'] = arrow.get(contest['startTimeSeconds']).to('Asia/Seoul').format('YYYY-MM-DD HH:mm')
+        d = arrow.get(contest['startTimeSeconds']).to('Asia/Seoul')
+        contest['date'] = d.format('YYYY-MM-DD HH:mm')
+        contest['display_date'] = d.format(f'MM월 DD일({get_weekday(d)}) HH시 mm분')
         contests.append(contest)
     contests = sorted(contests, key=lambda o: o['startTimeSeconds'])
 
@@ -54,8 +56,8 @@ def index():
         # 미리보기 이미지 생성 및 업로드
         im = generate_text_image((
             next_contest['name'],
-            f'Started: {contest["date"]}',
-            f'Before: {before}'
+            f'{contest["display_date"]}',
+            f'{before}'
         ))
         output = BytesIO()
         im.save(output, format="png")
