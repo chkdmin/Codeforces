@@ -1,4 +1,4 @@
-from timer import app
+from codeforces import app
 
 if __name__ == '__main__':
     app.run()

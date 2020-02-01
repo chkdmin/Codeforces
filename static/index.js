@@ -4,7 +4,7 @@ $(document).ready(() => {
         let $target = $(element).parent().parent().find('.before-date');
 
         setInterval(() => {
-            $target.text(moment.duration(started.diff(moment())).format("d [days] hh:mm:ss.SSS"));
+            $target.text(moment.duration(started.diff(moment())).format("d [days] hh:mm:ss"));
         });
     });
 });

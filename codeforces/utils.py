@@ -1,15 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-from timer import ROOT_DIR
-
-
-def millis_interval(diff):
-    """start and end are datetime instances"""
-    millis = diff.days * 24 * 60 * 60 * 1000
-    millis += diff.seconds * 1000
-    millis += diff.microseconds / 1000
-    return millis
+from codeforces import ROOT_DIR
 
 
 def generate_text_image(texts, margin=80):
@@ -19,7 +11,7 @@ def generate_text_image(texts, margin=80):
 
     im = Image.new("RGBA", (W, H), "black")
     draw = ImageDraw.Draw(im)
-    font = ImageFont.truetype(os.path.join(ROOT_DIR, 'arial.ttf'), 60)
+    font = ImageFont.truetype(os.path.join(ROOT_DIR, 'arial.ttf'), 45)
 
     for idx, text in enumerate(texts):
         w, h = draw.textsize(text, font=font)
