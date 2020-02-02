@@ -56,7 +56,7 @@ def index():
         # 미리보기 이미지 생성 및 업로드
         im = generate_text_image((
             next_contest['name'],
-            f'{contest["display_date"]}',
+            f'{next_contest["display_date"]}',
             f'{before}'
         ))
         output = BytesIO()
